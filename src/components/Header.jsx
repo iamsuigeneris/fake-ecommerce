@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Cart } from '../Context';
 import './style.css'
 
 const Header = () => {
+    const { cart } = useContext(Cart);
     return (
       <div>
         <span className="header">React Context API Tutorial</span>
@@ -12,7 +14,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart">Cart
-            {/* ({cart.length}) */}
+            ({cart.length})
             </Link>
           </li>
         </ul>
